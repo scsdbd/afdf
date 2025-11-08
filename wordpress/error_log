@@ -1,0 +1,6 @@
+[21-Oct-2025 07:45:19 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 20480 bytes) in /home/ability1/public_html/wordpress/wp-includes/blocks/blocks-json.php on line 3
+[21-Oct-2025 07:45:19 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 32768 bytes) in /home/ability1/public_html/wordpress/wp-includes/blocks/blocks-json.php on line 3
+[21-Oct-2025 07:45:19 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 32768 bytes) in /usr/local/cpanel/3rdparty/wp-toolkit/plib/vendor/wp-cli/vendor/wp-cli/php-cli-tools/lib/cli/Colors.php on line 1
+[21-Oct-2025 07:45:20 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 32768 bytes) in /home/ability1/public_html/wordpress/wp-includes/blocks/blocks-json.php on line 3
+[21-Oct-2025 07:45:20 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 32768 bytes) in /usr/local/cpanel/3rdparty/wp-toolkit/plib/vendor/wp-cli/vendor/wp-cli/php-cli-tools/lib/cli/Colors.php on line 1
+[21-Oct-2025 07:45:22 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 20480 bytes) in /home/ability1/public_html/wordpress/wp-includes/blocks/blocks-json.php on line 3
