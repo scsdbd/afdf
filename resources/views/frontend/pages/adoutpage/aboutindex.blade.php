@@ -10,7 +10,7 @@ HOME
 
 
 @include('frontend.pages.adoutpage.missionvision')
-@include('frontend.pages.adoutpage.aboutafdf')
+@include('frontend.pages.adoutpage.whydonate')
 @include('frontend.pages.adoutpage.useoffund')
 @include('frontend.pages.adoutpage.howtodonate')
 @endsection

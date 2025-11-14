@@ -148,6 +148,8 @@ Route::get('/memberShow', [AdminController::class, 'memberShow'])->name('memberS
 Route::get('/front-donate', [DonateController::class, 'donate'])->name('donate.index');
 Route::get('/single-donate', [DonateController::class, 'singleDonate'])->name('donate.single');
 
+// Route::post('/donation/store', [DonateController::class, 'donationconfrim'])->name('donation.store');
+
 Route::post('/donation/confirm', [DonateController::class, 'donationconfrim'])->name('donation.confirm');
 
 Route::post('/donation/store', [DonateController::class, 'donationconfrim'])->name('donation.store');

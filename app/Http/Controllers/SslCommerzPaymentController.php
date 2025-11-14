@@ -23,6 +23,7 @@ class SslCommerzPaymentController extends Controller
 
     public function index(Request $request)
     {
+        // dd($request->all());
        session()->put('name', $request->name);
 
        session()->put('email', $request->phone);

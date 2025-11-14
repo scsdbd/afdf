@@ -103,9 +103,12 @@
         flex-direction: column;
       }
     }
+        .scroll-center {
+    scroll-margin-top: 0vh;
+}
   </style>
 
-<section class="use-of-fund">
+<section class="use-of-fund" id="useofdonation-container">
   <!-- Left side text -->
   <div class="fund-text">
     <h2>How Your Donations Are Used</h2>

@@ -10,7 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!--FOR VIDEO GALLERY -->
-    <script type="text/javascript" src="html5gallery/jquery.js"></script>
+    {{-- <script type="text/javascript" src="html5gallery/jquery.js"></script> --}}
+    {{-- <script type="text/javascript" src="{{ asset('wordpress\wp-includes\js\jquery\jquery.js')}}"></script> --}}
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+
     <script type="text/javascript" src="html5gallery/html5gallery.js"></script>
     <!-- CSS==================================================-->
     <link rel="stylesheet" href="{{ asset('frontend_assets/assets/plugins/css/plugins.css')}} ">
@@ -89,3 +92,4 @@
 </head>
 
 <body>
+</body>

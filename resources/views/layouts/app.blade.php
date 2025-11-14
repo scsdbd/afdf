@@ -34,8 +34,9 @@
 <!-- Bootstrap Icons (optional, if you want icons) -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+ <style>
 
-
+</style>
 
 </head>
 <body style="background-color:#ffffff;"">
@@ -44,8 +45,19 @@
 
         <main class="py-4">
             @yield('content')
+            <!-- Go to top button -->
+
+
         </main>
+
     </div>
+
+ 
+{{-- scroll  --}}
+ <script>
+    window.scrollTo(0, 0);
+
+ </script>
 
 
 <!-- Bootstrap JS -->

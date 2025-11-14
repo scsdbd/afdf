@@ -7,3 +7,6 @@
 
     @include('frontend.include.footer')
     @include('frontend.include.footer_links')
+ 
+
+</div>

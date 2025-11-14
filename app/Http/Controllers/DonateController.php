@@ -21,6 +21,7 @@ class DonateController extends Controller
 
     public function donate()
     {
+
         return view('frontend.pages.donate.index');
     }
     public function singleDonate()
@@ -28,12 +29,37 @@ class DonateController extends Controller
         return view('frontend.pages.donate.singledonation');
     }
 
+    // gift
+    public function confirm(Request $request)
+{
+    // Validate data (optional but recommended)
+    $request->validate([
+        'items' => 'required|array',
+        'total_quantity' => 'required|integer',
+        'total_amount' => 'required|numeric',
+    ]);
+
+    // Save all data to session
+    session([
+        'donation_summary' => [
+            'items' => $request->items,
+            'total_quantity' => $request->total_quantity,
+            'total_amount' => $request->total_amount,
+        ]
+    ]);
+
+    return response()->json(['status' => 'success']);
+}
+
+
+
     public function donationconfrim(Request $request)
     {
+    // dd($request->all());
     session()->forget('donation');
 
     session()->put('donation', $request->donation_amount);
-
+    //   dd($request->donation_amount);
     $donationAmount = session('donation');
 
     return view('frontend.pages.donate.create', compact('donationAmount'));

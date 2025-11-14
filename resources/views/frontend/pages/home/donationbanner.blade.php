@@ -7,7 +7,7 @@
                     </div>
 
                     <div class="col-lg-5 col-12">
-                        <a href="#" class="me-4 mx-5" style="color:#5bc1ac">Make a donation</a>
+                        <a href="{{route('donate.single')}}" class="me-4 mx-5 custom-btn btn " style="color:#fff;padding: 10px;background-color: #5bc1ac;border: 1px solid #5bc1ac">Make a donation</a>
 
                         <a href="#section_4" class="custom-btn btn smoothscroll">Become a volunteer</a>
                     </div>

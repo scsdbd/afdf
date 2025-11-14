@@ -33,20 +33,20 @@
 
                     <div class="col-lg-6 col-md-5 col-12">
 
-                        <img src="{{asset('images/shapes/image_1.jpg')}}"
+                        <img src="{{asset('images/champaign/masudrana.jpg')}}"
                             class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
                     </div>
                     <div class="col-lg-5 col-md-7 col-12">
                         <div class="custom-text-block">
-                            <h2 class="mb-0">Badiuzzaman</h2>
+                            <h2 class="mb-0">Masud Rana</h2>
 
-                            <p class="text-muted mb-lg-4 mb-md-4">Founding Partner</p>
+                            <p class="text-muted mb-lg-4 mb-md-4">Disabled Baby</p>
 
-                            <p class="about-text">Embracing diversity is our guiding principle, and in our pursuit of excellence, let us not forget the extraordinary strength and resilience embodied by children with disabilities. </p>
+                            <p class="about-text">Masud Rana is a brave five-year-old boy living with a disability, but his smile and spirit never fade. With care and support, he’s learning, growing, and taking small steps every day. </p>
 
-                            <p class="about-text">Together, let's create an inclusive environment where every child, regardless of ability, thrives and reaches their full potential. Our commitment is unwavering—empowering every child, every step of the way</p>
+                            <p class="about-text">Thanks to your help, Masud now receives the care and therapy he needs. His progress and laughter remind us how kindness can truly change a child’s life.</p>
 
-                            <ul class="social-icon mt-4">
+                            {{-- <ul class="social-icon mt-4">
                                 <li class="social-icon-item">
                                     <a href="#" class="social-icon-link bi-twitter"></a>
                                 </li>
@@ -58,7 +58,7 @@
                                 <li class="social-icon-item">
                                     <a href="#" class="social-icon-link bi-instagram"></a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
 

@@ -39,7 +39,7 @@
 
       <!-- Left Image -->
       <div class="col-lg-6 p-0">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80"
+        <img src="{{asset('images/champaign/currentcampaign.jpg')}}"
              class="img-fluid campaign-img"
              alt="Flood Relief Campaign">
       </div>

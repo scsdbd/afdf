@@ -38,8 +38,8 @@
                 <div class="row" >
 
                     <div class="col-lg-6 col-12 mb-5 mb-lg-0" style="">
-                        <img  src="{{ asset('/images/shapes/vol_1.jpg') }}"
-                            class="custom-text-box-image img-fluid" alt="" style="">
+                        <img  src="{{ asset('images/champaign/ourstory.jpg') }}"
+                            class="custom-text-box-image img-fluid" alt="" style=" ">
                     </div>
 
                     <div class="col-lg-6 col-12">

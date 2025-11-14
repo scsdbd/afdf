@@ -244,15 +244,32 @@
                 <a href="#" class="dropdown-toggle">ABOUT</a>
                 <ul class="dropdown-menu">
                     @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
-                    <li>
-                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}">{{$anoutmenu->title}}</a>
-                    </li>
+                    {{-- <li>
+                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#about-container">{{$anoutmenu->title}}</a>
+
+                    </li> --}}
                     @endforeach
-                    @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
+                    <li>
+                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#about-container">Who We Are ?</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#whydonate-container">Why Donate?</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#useofdonation-container">Use Of Funds</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#whydonate-container">Why Donate?</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#howtodonate-container">How To Donate?</a>
+                    </li>
+
+                    {{-- @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
                     <li>
                         <a class="dropdown-item" href="{{ '/view_committeepage/' . $committeemenu->id }}">{{ $committeemenu->title }}</a>
                     </li>
-                    @endforeach
+                    @endforeach --}}
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -285,10 +302,10 @@
         <!-- Right Side Buttons -->
         <div class="nav-buttons ml-3">
             <button style="background-color: #5bc1ac" class="btn text-white rounded-pill" data-toggle="modal" data-target="#searchModal">
-                <i class="fa fa-search"></i> <!-- Search icon -->
+                <i class="fa fa-search" style="color:#fff"></i> <!-- Search icon -->
             </button>
             <a  href="{{ Route('sponsor_child') }}">
-                <button style="background-color: #5bc1ac" class="btn  text-white rounded-pill">Sponsor a Child</button>
+                <button style="background-color: #5bc1ac" class="btn  text-white rounded-pill text-uppercase fw-bold">Sponsor a Child</button>
             </a>
         </div>
     </div>

@@ -60,8 +60,9 @@
 }
 
 .btn-play:hover {
-  background-color: #048cbf;
+  background-color:#44525d;
   color: #fff;
+  border: 1px solid secondary #fff;
 }
 
 /* Modal styling */
@@ -94,8 +95,8 @@
             class="btn-play"
             data-toggle="modal"
             data-target="#videoModal"
-            data-src="https://www.youtube.com/embed/6-n_szx2XRE?si=I9LESlyYE_qldYZt">
-      Play Video
+            data-src="https://youtu.be/HH8aPBCW56w?si=ZQgPcebvNf5uodpM">
+      <i class="fa fa-play" aria-hidden="true"></i>
     </button>
   </div>
 </section>

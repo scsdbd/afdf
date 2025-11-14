@@ -127,11 +127,14 @@
         transform: translate(10px, 10px);
       }
     }
+    .scroll-center {
+    scroll-margin-top: 5vh !important;
+}
   </style>
 
 
 <!-- ✅ ABOUT FUND SECTION -->
-  <section class="aboutfund2-section">
+  <section class="aboutfund2-section scroll-center" id="whydonate-container">
     <div class="aboutfund2-container">
 
       <!-- LEFT TEXT -->

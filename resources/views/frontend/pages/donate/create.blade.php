@@ -59,7 +59,7 @@
         }
 
         .donate-btn {
-            background: linear-gradient(rgb(31, 67, 149), rgb(31, 67, 149)); /* Gradient for the button */
+            background: #5bc1ac; /* Gradient for the button */
             color: #fff; /* Text color for better contrast */
             padding: 15px 30px;
             border: none;
@@ -116,7 +116,7 @@
             <img src="{{ asset('child-imag.jpg') }}" alt="Smiling Child">
         </div>
         <div class="donation-options">
-            <h2 class="text-uppercase">Contribute any amount to support the well-being of children and youth with disabilities</h2>
+            <h2 class="text-uppercase">Support children and youth with disabilities</h2>
 
             <form action="{{ route('pay') }}" method="POST">
                 @csrf <!-- CSRF token for security -->
@@ -132,7 +132,7 @@
 
                 <div class="form-group">
                     <label for="donation_amount">Donation Amount</label>
-                    <input type="text" id="donation_amount" name="donation_amount" class="form-control" value="{{ $donationAmount }}" readonly> <!-- Displaying the session value -->
+                    <input   type="text" id="donation_amount" name="donation_amount" class="form-control" value="{{ $donationAmount }}" readonly> <!-- Displaying the session value -->
                 </div>
 
                 <div class="form-check d-flex text-left" style="color: black;">
