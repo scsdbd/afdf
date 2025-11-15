@@ -14,7 +14,7 @@
     /* Navbar Styling */
     .navbar {
         /* background-color: rgb(9, 19, 43); */
-        padding: 10px;
+        padding: 15px;
     }
 
     .navbar-container {
@@ -24,13 +24,30 @@
     }
 
     /* Logo Styling */
+    /* Logo styling */
+
+
+
+    /* Optional: vertically center in navbar */
     .logo {
-        color: #ffc000;
-        font-size: 24px;
-        font-weight: bold;
+        height: 100px;
         display: flex;
         align-items: center;
+        padding: 0;
+        max-width: 100%;
+        width: 200px;
+        display: block;
+        object-fit: contain;
     }
+
+    /* Responsive adjustment */
+    @media (max-width: 768px) {
+        .logo {
+            max-width: 80%;
+            /* scale down on smaller screens */
+        }
+    }
+
 
     /* Navigation Links Styling */
     .nav-links {
@@ -63,14 +80,14 @@
     }
 
     /* Show arrow for items with submenus */
-    .has-submenu > a::after {
+    .has-submenu>a::after {
         content: '▼';
         /* color: rgb(29, 42, 58); */
         display: inline;
     }
 
     /* Rotate arrow on hover */
-    .nav-item:hover > a::after {
+    .nav-item:hover>a::after {
         transform: rotate(180deg);
     }
 
@@ -101,10 +118,18 @@
         align-items: center;
         gap: 20px;
     }
-    .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
-    border-top-right-radius: -1px;
-    border-bottom-right-radius: -1px;
-}
+
+    .input-group .form-control:first-child,
+    .input-group-addon:first-child,
+    .input-group-btn:first-child>.btn,
+    .input-group-btn:first-child>.btn-group>.btn,
+    .input-group-btn:first-child>.dropdown-toggle,
+    .input-group-btn:last-child>.btn-group:not(:last-child)>.btn,
+    .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+        border-top-right-radius: -1px;
+        border-bottom-right-radius: -1px;
+    }
+
     .btn-success {
         /* background-color: rgb(17, 183, 25); */
         border: none;
@@ -137,177 +162,193 @@
     }
 
     @media (min-width: 768px) {
-    /* Show Hamburger Icon on Mobile */
-    .hamburger {
-        display: none;
 
+        /* Show Hamburger Icon on Mobile */
+        .hamburger {
+            display: none;
+
+        }
     }
-}
-@media (min-width: 768px) {
-    .navbar {
-        border-radius: 0px;
+
+    @media (min-width: 768px) {
+        .navbar {
+            border-radius: 0px;
+        }
     }
-}
+
     @media (max-width: 768px) {
-    /* Show Hamburger Icon on Mobile */
-    .hamburger {
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
-        color: #ffc000;
+
+        /* Show Hamburger Icon on Mobile */
+        .hamburger {
+            display: block;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ffc000;
+        }
+
+        /* Adjust the nav-links for overlay effect */
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 0;
+            padding: 10px 20px;
+            z-index: 10;
+            /* Ensures the menu appears above other content */
+        }
+
+        /* Show nav links when toggled */
+        .nav-links.active {
+            display: flex;
+        }
+
+        /* Dropdown styling for mobile */
+        .dropdown-menu {
+            position: static;
+            background-color: #ffffff;
+        }
+
+        .nav-buttons {
+            display: none;
+        }
+
+        @media (max-width: 624px) {
+            body {
+                margin: 0px;
+            }
+
+        }
     }
 
-    /* Adjust the nav-links for overlay effect */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        border-radius: 0;
-        padding: 10px 20px;
-        z-index: 10; /* Ensures the menu appears above other content */
+    .navbar {
+        position: relative;
+        min-height: 50px;
+        margin-bottom: 0px;
+        border: 1px solid transparent;
     }
 
-    /* Show nav links when toggled */
-    .nav-links.active {
-        display: flex;
+    .modal .form-control {
+        height: 52px;
+        border: 1px solid #d7dfea;
+        color: #727272;
+        width: 70%;
+        font-size: 15px;
+        border-radius: 120px;
+        box-shadow: none;
+        margin-top: 50px;
     }
 
-    /* Dropdown styling for mobile */
-    .dropdown-menu {
-        position: static;
-        background-color: #ffffff;
-    }
-
-    .nav-buttons {
-        display: none;
-    }
-    @media (max-width: 624px) {
-    body {
-        margin: 0px;
-    }
-
-    }
-}
-.navbar {
-    position: relative;
-    /* min-height: 50px; */
-    margin-bottom: 0px;
-    border: 1px solid transparent;
-}
-.modal .form-control {
-    height: 52px;
-    border: 1px solid #d7dfea;
-    color: #727272;
-    width: 70%;
-    font-size: 15px;
-    border-radius: 120px;
-    box-shadow: none;
-    margin-top: 50px;
-}
-@media (min-width: 768px) {
+    @media (min-width: 768px) {
         .contact-info {
-        display: none;
+            display: none;
+        }
     }
-}
 </style>
 
 <nav class="navbar fixed">
     @php
-    $footers = App\Models\contactUs::all();
-@endphp
+        $footers = App\Models\contactUs::all();
+    @endphp
     @foreach ($footers as $footer)
-    <div class="contact-info">
-      <p class="text-white"><i class="fa-solid fa-square-phone"></i> Phone: {{ $footer->phone }}</p>
+        {{-- <div class="contact-info">
+            <p class="text-white"><i class="fa-solid fa-square-phone"></i> Phone: {{ $footer->phone }}</p>
 
 
-  </div>
-    <div class="navbar-container sticky-top">
-        <!-- Logo -->
-        <div class="logo">
-            <a class="navbar-brand" href="{{ url('/') }}" style="margin: 15px; padding: 0;">
-                <img style="height: 50px;" class="img-responsive" src="{{ URL::to('/') }}/admin_assets/logo/ability-for-disability-fund.png" alt="">
-            </a>
-        </div>
+        </div> --}}
+        <div class="navbar-container sticky-top">
+            <!-- Logo -->
+            <div class="logo">
+                <a class="navbar-brand" href="{{ url('/') }}" style="">
+                    <img class="img-responsive"
+                        src="{{ URL::to('/') }}/admin_assets/logo/ability-for-disability-fund.png" alt="">
+                </a>
+            </div>
+    @endforeach
+    <div class="hamburger" id="hamburger">&#9776;</div>
 
-        @endforeach
-        <div class="hamburger" id="hamburger">&#9776;</div>
-
-        <!-- Navigation Links -->
-        <ul class="nav-links " id="navLinks">
-            <li><a href="{{ url('/') }}">HOME</a></li>
-            <li class="nav-item has-submenu">
-                <a href="#" class="dropdown-toggle">ABOUT</a>
-                <ul class="dropdown-menu">
-                    @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
+    <!-- Navigation Links -->
+    <ul class="nav-links " id="navLinks">
+        <li><a href="{{ url('/') }}">HOME</a></li>
+        <li class="nav-item has-submenu">
+            <a href="#" class="dropdown-toggle">ABOUT</a>
+            <ul class="dropdown-menu">
+                @foreach (App\Models\Category::where('type', 'About')->get() as $anoutmenu)
                     {{-- <li>
                         <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#about-container">{{$anoutmenu->title}}</a>
 
                     </li> --}}
-                    @endforeach
-                    <li>
-                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#about-container">Who We Are ?</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#whydonate-container">Why Donate?</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#useofdonation-container">Use Of Funds</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#whydonate-container">Why Donate?</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="{{'/view_aboutepage/'.$anoutmenu->id}}#howtodonate-container">How To Donate?</a>
-                    </li>
+                @endforeach
+                <li>
+                    <a class="dropdown-item" href="{{ '/view_aboutepage/' . $anoutmenu->id }}#about-container">Who We
+                        Are
+                        ?</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{{ '/view_aboutepage/' . $anoutmenu->id }}#whydonate-container">Why
+                        Donate?</a>
+                </li>
+                <li>
+                    <a class="dropdown-item"
+                        href="{{ '/view_aboutepage/' . $anoutmenu->id }}#useofdonation-container">Use
+                        Of Funds</a>
+                </li>
 
-                    {{-- @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
+                <li>
+                    <a class="dropdown-item" href="{{ '/view_aboutepage/' . $anoutmenu->id }}#howtodonate-container">How
+                        To Donate?</a>
+                </li>
+
+                {{-- @foreach (App\Models\Category::where('type', 'Committee')->get() as $committeemenu)
                     <li>
                         <a class="dropdown-item" href="{{ '/view_committeepage/' . $committeemenu->id }}">{{ $committeemenu->title }}</a>
                     </li>
                     @endforeach --}}
-                </ul>
-            </li>
-            <li class="nav-item has-submenu">
-                <a href="#" class="dropdown-toggle">ACTIVITIES</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ url('/event') }}">Events</a></li>
-                    <li><a class="dropdown-item" href="{{ url('/champaign') }}">Campaign</a></li>
-                    <li><a class="dropdown-item" href="{{ url('/project') }}">Projects</a></li>
-                </ul>
-            </li>
-            <li class="nav-item has-submenu">
-                <a href="#" class="dropdown-toggle">INVOLVED</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ url('/volunteer') }}">Join as a Volunteer</a></li>
-                    <li><a class="dropdown-item" href="{{ url('/signin') }}">Join as a Donor</a></li>
-                </ul>
-            </li>
-            <li class="nav-item has-submenu">
-                <a href="#" class="dropdown-toggle">MEDIA</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ url('/news') }}">News</a></li>
-                    <li><a href="{{ url('/All-Gallery') }}">Gallery</a></li>
-                    <li><a href="/All-Video">Video</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ Route('donate.index') }}">DONATE</a></li>
-            <li><a href="{{ url('/Contact-Us') }}">CONTACT</a></li>
-        </ul>
+            </ul>
+        </li>
+        <li class="nav-item has-submenu">
+            <a href="#" class="dropdown-toggle">ACTIVITIES</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ url('/event') }}">Events</a></li>
+                <li><a class="dropdown-item" href="{{ url('/champaign') }}">Campaign</a></li>
+                <li><a class="dropdown-item" href="{{ url('/project') }}">Projects</a></li>
+            </ul>
+        </li>
+        <li class="nav-item has-submenu">
+            <a href="#" class="dropdown-toggle">INVOLVED</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ url('/volunteer') }}">Join as a Volunteer</a></li>
+                <li><a class="dropdown-item" href="{{ url('/signin') }}">Join as a Donor</a></li>
+            </ul>
+        </li>
+        <li class="nav-item has-submenu">
+            <a href="#" class="dropdown-toggle">MEDIA</a>
+            <ul class="dropdown-menu">
+                <li><a href="{{ url('/news') }}">News</a></li>
+                <li><a href="{{ url('/All-Gallery') }}">Gallery</a></li>
+                <li><a href="/All-Video">Video</a></li>
+            </ul>
+        </li>
+        <li><a href="{{ Route('donate.index') }}">Gift<small class="ms-3"><i class="fa-solid fa-heart"
+                        style="color:red"></i></small></a></li>
+        <li><a href="{{ url('/Contact-Us') }}">CONTACT</a></li>
+    </ul>
 
-        <!-- Right Side Buttons -->
-        <div class="nav-buttons ml-3">
-            <button style="background-color: #5bc1ac" class="btn text-white rounded-pill" data-toggle="modal" data-target="#searchModal">
-                <i class="fa fa-search" style="color:#fff"></i> <!-- Search icon -->
-            </button>
-            <a  href="{{ Route('sponsor_child') }}">
-                <button style="background-color: #5bc1ac" class="btn  text-white rounded-pill text-uppercase fw-bold">Sponsor a Child</button>
-            </a>
-        </div>
+    <!-- Right Side Buttons -->
+    <div class="nav-buttons ml-3">
+        <button style="background-color: #5bc1ac" class="btn text-white rounded-pill" data-toggle="modal"
+            data-target="#searchModal">
+            <i class="fa fa-search" style="color:#fff"></i> <!-- Search icon -->
+        </button>
+        <a href="{{ Route('sponsor_child') }}">
+            <button style="background-color: #5bc1ac"
+                class="btn  text-white rounded-pill text-uppercase fw-bold">Sponsor a Child</button>
+        </a>
+    </div>
     </div>
 </nav>
 
@@ -317,12 +358,13 @@
 
 
 <style>
-    .input-group-append{
-margin-left:250px;
+    .input-group-append {
+        margin-left: 250px;
     }
 </style>
 <!-- Search Modal -->
-<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

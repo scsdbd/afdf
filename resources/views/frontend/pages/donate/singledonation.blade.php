@@ -1,244 +1,261 @@
 @extends('frontend.masterTemp')
 
 @section('front-main-content')
-<style>
-    .containers {
-        display: flex;
-        justify-content: center;
-        padding: 60px 0;
-        background: #ffffff;
-    }
+    <style>
+        /* ───────────────────────────────
+               MAIN WRAPPER
+            ──────────────────────────────── */
+        .containers {
+            width: 100%;
+            max-width: 500px;
+            /* fixed max width */
+            margin: auto;
+            padding: 40px 15px;
+            background: #ffffff;
+            box-sizing: border-box;
+        }
 
-    .donation-section {
-        display: flex;
-        flex-direction: row;
-        /* align-items: stretch; */
-        background: #ffffff;
-        border-radius: 10px;
-        padding: 30px;
-        /* max-width: 1190px; */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-    }
-    @media (max-width: 767px) {
-    .donation-section {
-        flex-direction: column; /* Stack items vertically on small screens */
-        align-items: center; /* Center items */
-    }
-    .gift-items {
-        flex-direction: column; /* Stack items vertically on small screens */
-    }
+        /* ───────────────────────────────
+               TAB BUTTONS
+            ──────────────────────────────── */
+        .donation-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
 
-    }
+        .donation-tab {
+            flex: 1;
+            text-align: center;
+            padding: 12px 0;
+            background: #eee;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .2s;
+        }
 
-    .donation-content, .gift-content {
-        /* width: 30%; */
-    }
+        .donation-tab.active {
+            background: #5bc1ac;
+            color: #fff;
+        }
 
-    .divider {
-        width: 1px;
-        background-color: #ddd;
-        margin: 0 20px;
-    }
+        /* ───────────────────────────────
+               TAB CONTENT BOXES
+            ──────────────────────────────── */
+        .tab-box {
+            display: none;
+            width: 100%;
+            min-height: 210px;
+            /* ensures content box height is fixed */
+            box-sizing: border-box;
+        }
 
-    .donation-header {
-        text-align: center;
-        margin-bottom: 20px;
+        .tab-box.show {
+            display: block;
+        }
 
-    }
+        /* ───────────────────────────────
+               DONATION BLOCK (AMOUNT)
+            ──────────────────────────────── */
+        .contribute-box {
+            width: 100%;
+            background: #fff;
+            border-radius: 12px;
+            /* padding: 25px; */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
 
-    .donation-header h2 {
-        font-size: 2em;
-        color: #333;
-        font-weight: bold;
-    }
+        .amount-input input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 1.1em;
+            box-sizing: border-box;
+        }
 
-    .donation-header p {
-        font-size: 1.1em;
-        color: #666;
-    }
+        .amount-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
 
-    .amount-input {
-        margin-bottom: 20px;
-        text-align: center;
-    }
+        .amount-btn {
+            flex: 1;
+            text-align: center;
+            padding: 12px 0;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+            background: #f1f1f1;
+            cursor: pointer;
+            transition: .2s;
+        }
 
-    .amount-input input {
-        width: 100%;
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #ddd;
-        font-size: 1.2em;
-        color: #333;
-    }
+        .amount-btn.active {
+            background: #00b894;
+            color: #fff;
+        }
 
-    .amount-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
 
-    .amount-btn {
-        background-color: #f1f1f1;
-        border: 1px solid #ddd;
-        color: #333;
-        padding: 10px 20px;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
+        /* ───────────────────────────────
+               DONATE BUTTON
+            ──────────────────────────────── */
+        .donate-btn-wrapper {
+            optional for spacing */
+        }
 
-    .amount-btn.active,
-    .amount-btn:hover {
-        background-color: #00b894;
-        color: #fff;
-    }
+        .donate-btn-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0 15px;
+        }
 
-    .donate-btn {
-        background: #5a6f80;
-        color: #fff;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: bold;
-        transition: background 0.3s ease;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
+        .donate-btn {
+            width: 100%;
+            max-width: 340px;
+            padding: 15px;
+            font-size: 1.2em;
+            border-radius: 12px;
+            background: #5bc1ac;
+            color: #fff;
+            border: none;
+            transition: .3s;
+            cursor: pointer;
+        }
 
-    .gift-items {
-        display: flex;
+        .donate-btn:hover {
+            background: #5a6f80;
+        }
 
-        gap: 20px;
-                        overflow-x: auto; /* Allow horizontal scrolling */
 
-    }
+        /* ───────────────────────────────
+               RESPONSIVE FIXES
+            ──────────────────────────────── */
+        @media (max-width: 600px) {
 
-    .gift-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #f1f1f1;
-        border-radius: 10px;
-        padding: 25px;
-        border: 1px solid #ddd;
-        position: relative; /* Add position relative for checkmark */
-        transition: background 0.3s ease;
-        text-align: center;
-        cursor: pointer;
-        width: 200px; /* Add pointer cursor for clickability */
-    }
+            .amount-buttons {
+                flex-direction: column;
+            }
 
-    .gift-item.selected {
-        border: 2px solid #00b894; /* Change border color to indicate selection */
-        background: #dfe6e9; /* Change background color when selected */
-    }
+            .amount-btn {
+                width: 100%;
+            }
 
-    .checkmark {
-        display: none; /* Initially hide the checkmark */
-        color: #00b894; /* Set color for the checkmark */
-        font-size: 1.5em; /* Adjust size as needed */
-        position: absolute; /* Position it inside the gift item */
-        top: 10px; /* Adjust positioning */
-        right: 10px; /* Adjust positioning */
-    }
 
-    .gift-item.selected .checkmark {
-        display: block; /* Show the checkmark when selected */
-    }
 
-    .gift-item img {
-        max-width: 50px;
-        margin-bottom: 15px;
-    }
+            .donation-tabs {
+                flex-direction: column;
+            }
 
-    .gift-item h5 {
-        font-size: 1em;
-        color: #333;
-        margin: 0;
-    }
+            .donation-tab {
+                width: 100%;
+            }
 
-    .gift-item p {
-        font-size: 0.9em;
-        color: #666;
-    }
+        }
+    </style>
 
-    .donate-btn-wrapper {
-        display: flex;
-        justify-content: center;
-        /* margin-top: 20px; */
-        width: 100%;
-        padding: 0 15px;
-    }
+    <div class="containers">
 
-    .form-group, form {
-        width: auto;
-    }
+        <form action="{{ route('donation.confirm') }}" method="POST" id="donationForm">
+            @csrf
 
-    .quantity-control {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
 
-    .quantity-btn {
-        background-color: #f1f1f1;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-        font-size: 1em;
-    }
-    /* button  */
+            <div class="donation-tabs">
+                <div class="donation-tab active" data-type="monthly">Monthly</div>
+                <div class="donation-tab" data-type="onetime">One Time</div>
+            </div>
 
-.donate-btn {
-  background-color: #5bc1ac;
-  transition: 0.3s ease;
-  border: none;
-  color: #fff;
-}
+            <div class="donation-tab-content">
 
-.donate-btn:hover {
-  background-color: #5a6f80;
+                <!-- MONTHLY TAB -->
+                @include('frontend.pages.donate.monthlydonation')
 
-}
-.donate-btn:hover a {
-    color: #fff;
-}
-</style>
+                <!-- ONE TIME TAB -->
+                <div id="onetimeBox" class="tab-box">
+                    @include('frontend.pages.donate.donationamount')
+                </div>
 
-<div class="containers">
-    <form action="{{ route('donation.confirm') }}" method="POST" id="donationForm">
-        @csrf
-        @include('frontend.pages.donate.donationamount')
-        {{-- <div class="donation-section"> --}}
+            </div>
+            {{-- <div class="donation-section"> --}}
             <!-- Donation Amount Section -->
 
 
             {{-- <div class="divider"></div> --}}
             {{-- @include('frontend.pages.donate.donationgift') --}}
 
-        {{-- </div> --}}
-       <div class="donate-btn-wrapper">
-            <button type="submit" class="donate-btn btn btn-success" style>Donate</button>
-        </div>
-    </form>
+            {{-- </div> --}}
+            <div class="donate-btn-wrapper">
+                <button type="submit" class="donate-btn btn btn-success" style>Donate</button>
+            </div>
+        </form>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+0G+SEiib2EBE7bY5N4E2W4r55y6b0gDbVgZxJ" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+0G+SEiib2EBE7bY5N4E2W4r55y6b0gDbVgZxJ" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-
-    </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 
-</div>
+        <script>
+            $(document).ready(function() {
+                const $buttons = $('.amount-btn');
+                const $input = $('#donationAmount');
+
+                $buttons.on('click', function() {
+                    $buttons.removeClass('active'); // remove active from all
+                    $(this).addClass('active'); // add active to clicked one
+                    $input.val($(this).data('value')); // update input
+                });
+            });
+
+            // donation tab
+        </script>
+
+        <script>
+            $(document).ready(function() {
+
+
+                //-----------------------------
+                // TAB SWITCHING
+                //-----------------------------
+                $('.donation-tab').on('click', function() {
+                    $('.donation-tab').removeClass('active');
+                    $(this).addClass('active');
+
+                    const type = $(this).data('type');
+
+                    if (type === "monthly") {
+                        $('#monthlyBox').addClass('show');
+                        $('#onetimeBox').removeClass('show');
+                    } else {
+                        $('#onetimeBox').addClass('show');
+                        $('#monthlyBox').removeClass('show');
+                    }
+                });
+
+
+                //-----------------------------
+                // MONTHLY BUTTON SELECT
+                //-----------------------------
+                const $monthlyBtns = $('.monthly-btn');
+                const $monthlyInput = $('#monthlyAmount');
+
+                $monthlyBtns.on('click', function() {
+                    $monthlyBtns.removeClass('active');
+                    $(this).addClass('active');
+                    $monthlyInput.val($(this).data('value'));
+                });
+
+            });
+        </script>
+
+
+
+    </div>
 @endsection
