@@ -1,195 +1,198 @@
 @extends('frontend.masterTemp')
 @section('fmenuname')
-HOME
+    HOME
 @endsection
 @section('front-main-content')
-<style type="text/css">
-    .principle {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    .carousel-inner,
-    img {
-        height: 0px;
-    }
-
-    .principle h2 {
-        color: #5a6f80
-    }
-
-    .principle img {
-        width: 200px;
-    }
-
-    .principle h3 {
-        background: #5a6f80
-        color: #ffff;
-        display: block;
-        padding: 5px 0px;
-    }
-
-    .principle h6 {
-        font-size: 18px
-    }
-
-    @media only screen and (max-width: 400px) {
-        .videoedit {
-            margin: -55px
-        }
-
-        .imagegallery {
-            width: 375px;
-            margin: -38px;
+    <style type="text/css">
+        .principle {
+            margin-top: 50px;
             margin-bottom: 50px;
         }
-    }
 
-    .gallery-image {
-        width: 100%;
-        /* Set the desired width */
-        height: auto;
-        /* Maintain aspect ratio */
-        max-height: 250px;
-        /* Set the maximum height if needed */
-    }
+        .carousel-inner,
+        img {
+            height: 0px;
+        }
 
-    /* ------------------------------------------------------ */
+        .principle h2 {
+            color: #5a6f80
+        }
+
+        .principle img {
+            width: 200px;
+        }
+
+        .principle h3 {
+            background: #5a6f80 color: #ffff;
+            display: block;
+            padding: 5px 0px;
+        }
+
+        .principle h6 {
+            font-size: 18px
+        }
+
+        @media only screen and (max-width: 400px) {
+            .videoedit {
+                margin: -55px
+            }
+
+            .imagegallery {
+                width: 375px;
+                margin: -38px;
+                margin-bottom: 50px;
+            }
+        }
+
+        .gallery-image {
+            width: 100%;
+            /* Set the desired width */
+            height: auto;
+            /* Maintain aspect ratio */
+            max-height: 250px;
+            /* Set the maximum height if needed */
+        }
+
+        /* ------------------------------------------------------ */
 
 
-    .title {
-        width: 100%;
-        max-width: 854px;
-        margin: 0 auto;
-    }
-
-    .caption {
-        width: 100%;
-        max-width: 854px;
-        margin: 0 auto;
-        padding: 20px 0;
-    }
-
-    .vid-main-wrapper {
-        width: 100%;
-        /* max-width: 1100px; */
-        min-width: 440px;
-        background: #fff;
-        margin: 0 auto;
-    }
-
-    /*  VIDEO PLAYER CONTAINER
-     ############################### */
-    .vid-container {
-        position: relative;
-        /* padding-bottom: 52%; */
-        padding-top: 30px;
-        height: 0;
-        width: 70%;
-        float: left;
-    }
-
-    .vid-container iframe,
-    .vid-container object,
-    .vid-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-height: 360px;
-    }
-
-    /*  VIDEOS PLAYLIST
-     ############################### */
-    .vid-list-container {
-        width: 29%;
-        height: 360px;
-        overflow: hidden;
-        float: right;
-    }
-
-    .vid-list-container:hover,
-    .vid-list-container:focus {
-        overflow-y: auto;
-    }
-
-    ol#vid-list {
-        margin: 0;
-        padding: 0;
-        background: #222;
-    }
-
-    ol#vid-list li {
-        list-style: none;
-    }
-
-    ol#vid-list li a {
-        text-decoration: none;
-        background-color: #222;
-        height: 55px;
-        display: block;
-        padding: 10px;
-    }
-
-    ol#vid-list li a:hover {
-        background-color: #666666;
-    }
-
-    .vid-thumb {
-        float: left;
-        margin-right: 8px;
-    }
-
-    .active-vid {
-        background: #3a3a3a;
-    }
-
-    #vid-list .desc {
-        color: #cacaca;
-        font-size: 13px;
-        margin-top: 5px;
-    }
-
-    @media (max-width: 624px) {
-        body {
-            margin: 15px;
+        .title {
+            width: 100%;
+            max-width: 854px;
+            margin: 0 auto;
         }
 
         .caption {
-            margin-top: 40px;
+            width: 100%;
+            max-width: 854px;
+            margin: 0 auto;
+            padding: 20px 0;
         }
 
-        .vid-list-container {
-            padding-bottom: 20px;
-        }
-    }
-
-    .g-photo:hover {
-        transform: scale(1.1);
-        transition: transform 0.9s ease;
-    }
-    @media (max-width: 624px) {
-    body {
-        margin: 0px;
-    }}
-    @media (max-width: 767px) {
         .vid-main-wrapper {
-display: flex;
-flex-direction: column;
-  }
-  .vid-list-container{
-    margin-top:350px;
-  }
+            width: 100%;
+            /* max-width: 1100px; */
+            min-width: 440px;
+            background: #fff;
+            margin: 0 auto;
+        }
 
-  }
-</style>
-<div class="clearfix "></div>
+        /*  VIDEO PLAYER CONTAINER
+         ############################### */
+        .vid-container {
+            position: relative;
+            /* padding-bottom: 52%; */
+            padding-top: 30px;
+            height: 0;
+            width: 70%;
+            float: left;
+        }
 
-@include('frontend.include.slider')
-{{-- @include('frontend\pages\about') --}}
-<link rel="stylesheet" href="css/darkscroll.css">
-<br>
-{{-- <div class="container">
+        .vid-container iframe,
+        .vid-container object,
+        .vid-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 360px;
+        }
+
+        /*  VIDEOS PLAYLIST
+         ############################### */
+        .vid-list-container {
+            width: 29%;
+            height: 360px;
+            overflow: hidden;
+            float: right;
+        }
+
+        .vid-list-container:hover,
+        .vid-list-container:focus {
+            overflow-y: auto;
+        }
+
+        ol#vid-list {
+            margin: 0;
+            padding: 0;
+            background: #222;
+        }
+
+        ol#vid-list li {
+            list-style: none;
+        }
+
+        ol#vid-list li a {
+            text-decoration: none;
+            background-color: #222;
+            height: 55px;
+            display: block;
+            padding: 10px;
+        }
+
+        ol#vid-list li a:hover {
+            background-color: #666666;
+        }
+
+        .vid-thumb {
+            float: left;
+            margin-right: 8px;
+        }
+
+        .active-vid {
+            background: #3a3a3a;
+        }
+
+        #vid-list .desc {
+            color: #cacaca;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 624px) {
+            body {
+                margin: 15px;
+            }
+
+            .caption {
+                margin-top: 40px;
+            }
+
+            .vid-list-container {
+                padding-bottom: 20px;
+            }
+        }
+
+        .g-photo:hover {
+            transform: scale(1.1);
+            transition: transform 0.9s ease;
+        }
+
+        @media (max-width: 624px) {
+            body {
+                margin: 0px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .vid-main-wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .vid-list-container {
+                margin-top: 350px;
+            }
+
+        }
+    </style>
+    <div class="clearfix "></div>
+
+    @include('frontend.include.slider')
+    {{-- @include('frontend\pages\about') --}}
+    <link rel="stylesheet" href="css/darkscroll.css">
+    <br>
+    {{-- <div class="container">
     <div class="row sakib " style="margin-right: 5px;">
         <div class="col-md-3 col-sm-12 col-xs-12">
             <div class="simple-tab">
@@ -269,40 +272,43 @@ Central Executive Member
         </div>
     </div>
 </div> --}}
-<style>
-    .img {
-        height: 40px;
-    }
-    /* General Styling Adjustments for Mobile */
-@media (max-width: 768px) {
-    .gallery{
-        display: flex;
-        flex-direction: column;
-    }
-    .sakib{
-        display: none;
-    }
-    .vid-list-container{
-width:300px;
-overflow-y: auto;
-   }
+    <style>
+        .img {
+            height: 40px;
+        }
 
-    ol#vid-list li a {
-    text-decoration: none;
-    background-color: #222;
-    display: flex;
-gap:10px;
-margin-top: 10px;
-   }
-   .section {
-    padding: 0px 0 0px;
-}
+        /* General Styling Adjustments for Mobile */
+        @media (max-width: 768px) {
+            .gallery {
+                display: flex;
+                flex-direction: column;
+            }
 
-}
+            .sakib {
+                display: none;
+            }
 
-</style>
-<div class="clearfix"></div>
-{{-- <section id="testimonial">
+            .vid-list-container {
+                width: 300px;
+                overflow-y: auto;
+            }
+
+            ol#vid-list li a {
+                text-decoration: none;
+                background-color: #222;
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .section {
+                padding: 0px 0 0px;
+            }
+
+        }
+    </style>
+    <div class="clearfix"></div>
+    {{-- <section id="testimonial">
     <div class="container spidochetube" id="youtube">
         <div class="container-fluid pb-video-container">
             <div class="col-md-">
@@ -339,8 +345,8 @@ margin-top: 10px;
                         </div>
                     </div> --}}
 
-                    {{-- <h3 class="text-center mt-3">Disabilities Gallery</h3><br> --}}
-                    {{-- <div class="i-box">
+    {{-- <h3 class="text-center mt-3">Disabilities Gallery</h3><br> --}}
+    {{-- <div class="i-box">
                         <div class="i-head">
                             <div class="i-body">
                                 <div class="row">
@@ -373,60 +379,60 @@ margin-top: 10px;
 
 
 
-<div class="clearfix"></div>
+    <div class="clearfix"></div>
 
-<hr>
+    <hr>
 
 
 
-<script>
-    $(document).ready(function() {
-        $(".vid-item").each(function(index) {
-            $(this).on("click", function() {
-                var current_index = index + 1;
-                $(".vid-item .thumb").removeClass("active");
-                $(".vid-item:nth-child(" + current_index + ") .thumb").addClass("active");
+    <script>
+        $(document).ready(function() {
+            $(".vid-item").each(function(index) {
+                $(this).on("click", function() {
+                    var current_index = index + 1;
+                    $(".vid-item .thumb").removeClass("active");
+                    $(".vid-item:nth-child(" + current_index + ") .thumb").addClass("active");
+                });
             });
         });
-    });
-</script>
+    </script>
 
-<!-- =========== ==========miscellanous============================= -->
+    <!-- =========== ==========miscellanous============================= -->
 
-<!-- OUR MISSION -->
- @include('frontend.pages.home.campaign')
+    <!-- OUR MISSION -->
+    @include('frontend.pages.home.campaign')
 
- @include('frontend.pages.home.ourstory')
+    @include('frontend.pages.home.ourstory')
 
-@include('frontend.pages.home.videobanner')
- {{-- @include('frontend.pages.home.missionvision') --}}
+    @include('frontend.pages.home.videobanner')
+    {{-- @include('frontend.pages.home.missionvision') --}}
 
-        <!-- About  -->
+    <!-- About  -->
 
-@include('frontend.pages.home.about')
-{{-- cause  --}}
-@include('frontend.pages.home.cause')
-
-        <!-- make an impact -->
-@include('frontend.pages.home.donationbanner')
-
+    @include('frontend.pages.home.about')
+    {{-- cause  --}}
+    {{-- @include('frontend.pages.home.cause') --}}
+    @include('frontend.pages.home.champaign')
+    <!-- make an impact -->
+    @include('frontend.pages.home.donationbanner')
 
 
-        <!-- volunteer section  -->
+
+    <!-- volunteer section  -->
 
 
-@include('frontend.pages.home.aboutvolunteer')
+    @include('frontend.pages.home.aboutvolunteer')
 
-        <!-- happy donners  -->
-@include('frontend.pages.home.happydoners')
-
-
-{{-- recent news  --}}
-
- @include('frontend.pages.home.news')
+    <!-- happy donners  -->
+    @include('frontend.pages.home.happydoners')
 
 
- {{-- payment --}}
-<img src="{{ asset('Payment Banner_Jul24_V1-02.png') }}" style="width:100%; height:23rem; object-fit: contain;" class="img-fluid" alt="Payment Banner">
+    {{-- recent news  --}}
 
+    @include('frontend.pages.home.news')
+
+
+    {{-- payment --}}
+    <img src="{{ asset('Payment Banner_Jul24_V1-02.png') }}" style="width:100%; height:23rem; object-fit: contain;"
+        class="img-fluid" alt="Payment Banner">
 @endsection

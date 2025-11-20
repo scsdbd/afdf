@@ -3,8 +3,8 @@
 @section('front-main-content')
     <style>
         /* ───────────────────────────────
-               MAIN WRAPPER
-            ──────────────────────────────── */
+                   MAIN WRAPPER
+                ──────────────────────────────── */
         .containers {
             width: 100%;
             max-width: 500px;
@@ -12,12 +12,16 @@
             margin: auto;
             padding: 40px 15px;
             background: #ffffff;
-            box-sizing: border-box;
+            border: 1px solid #5a6f806e;
+            border-radius: 5px;
+
+
+
         }
 
         /* ───────────────────────────────
-               TAB BUTTONS
-            ──────────────────────────────── */
+                   TAB BUTTONS
+                ──────────────────────────────── */
         .donation-tabs {
             display: flex;
             gap: 10px;
@@ -42,8 +46,8 @@
         }
 
         /* ───────────────────────────────
-               TAB CONTENT BOXES
-            ──────────────────────────────── */
+                   TAB CONTENT BOXES
+                ──────────────────────────────── */
         .tab-box {
             display: none;
             width: 100%;
@@ -57,8 +61,8 @@
         }
 
         /* ───────────────────────────────
-               DONATION BLOCK (AMOUNT)
-            ──────────────────────────────── */
+                   DONATION BLOCK (AMOUNT)
+                ──────────────────────────────── */
         .contribute-box {
             width: 100%;
             background: #fff;
@@ -103,8 +107,8 @@
 
 
         /* ───────────────────────────────
-               DONATE BUTTON
-            ──────────────────────────────── */
+                   DONATE BUTTON
+                ──────────────────────────────── */
         .donate-btn-wrapper {
             optional for spacing */
         }
@@ -135,8 +139,8 @@
 
 
         /* ───────────────────────────────
-               RESPONSIVE FIXES
-            ──────────────────────────────── */
+                   RESPONSIVE FIXES
+                ──────────────────────────────── */
         @media (max-width: 600px) {
 
             .amount-buttons {
@@ -147,10 +151,14 @@
                 width: 100%;
             }
 
-
+            .donate-btn-wrapper {
+                margin-top: 20px;
+            }
 
             .donation-tabs {
-                flex-direction: column;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between
             }
 
             .donation-tab {

@@ -65,7 +65,7 @@ ALL Training
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->price }}</td>
                                         <td>
-                                            <img src="{{asset($value->image)}}" alt="" width="100%">
+                                            <img src="{{asset($value->image)}}" alt="" width="20px">
                                         </td>
                                         <td>{{ $value->quanity }}</td>
                                         <td>

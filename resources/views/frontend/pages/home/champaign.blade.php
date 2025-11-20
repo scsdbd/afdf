@@ -1,8 +1,13 @@
-@extends('frontend.masterTemp')
-@section('fmenuname')
-HOME
-@endsection
-@section('front-main-content')
+
+<div class="clearfix"></div>
+
+{{-- <!-- Title Header Start -->
+<section class="inner-header-title"
+    style="background-image:url(https://user-images.githubusercontent.com/513929/53929982-e5497700-404c-11e9-8393-dece0b196c98.png);">
+    <div class="container">
+        <h1>Champaign</h1>
+    </div>
+</section> --}}
 <div class="clearfix"></div>
 <!-- Title Header End -->
 
@@ -31,12 +36,14 @@ HOME
     justify-content: space-between;
 
 }
-
+.cause-section {
+    margin-bottom: 20px;
+}
 </style>
 
 <!-- ========== Begin: Brows job Category ===============  -->
 
-<div>
+<div class="cause-section">
     <h2 class="font-weight-bold text-dark text-center" style="margin: 30px 0">Our Causes</h2>
 
 
@@ -71,4 +78,4 @@ HOME
   </div>
 </div>
 </div>
-@endsection
+

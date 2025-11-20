@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\FrontEnd;
 use App\Models\Rules;
 use App\Models\Job;
@@ -119,6 +120,8 @@ class FrontEndController extends Controller
             ->select('*')
             ->where('status', 1)->where('type', 1)
             ->get();
+        $projects = champaign::where('type', 'current')->get();
+
         //         dd($slidersImages);
         return view('frontend.pages.home', get_defined_vars());
     }
@@ -400,6 +403,7 @@ class FrontEndController extends Controller
     }
     public function champaign()
     {
+
 
         $projects = champaign::where('type', 'current')->get();
         return view('frontend.pages.champaign', get_defined_vars());

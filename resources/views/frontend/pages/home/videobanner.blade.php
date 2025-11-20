@@ -95,7 +95,7 @@
             class="btn-play"
             data-toggle="modal"
             data-target="#videoModal"
-            data-src="https://youtu.be/HH8aPBCW56w?si=ZQgPcebvNf5uodpM">
+            data-src="https://www.youtube.com/embed/3SzazN2OrsQ?si=YgZgU_tguwzQABiM">
       <i class="fa fa-play" aria-hidden="true"></i>
     </button>
   </div>
@@ -112,7 +112,7 @@
               </button>
               <!-- 16:9 aspect ratio -->
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/3LkmevzULK0?si=g4JeZNIaieYLB3Su" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3SzazN2OrsQ?si=YgZgU_tguwzQABiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
 	      	</div>
 	    </div>
@@ -145,4 +145,23 @@
 		})
 		// document ready
 	});
+
+    // Get the modal element
+var videoModal = document.getElementById('videoModal');
+
+// Find the iframe inside the modal
+var iframe = videoModal.querySelector('iframe');
+var videoSrc = iframe.src; // store original video URL
+
+// When modal is closed
+$('#videoModal').on('hidden.bs.modal', function () {
+    // Stop the video
+    iframe.src = '';
+
+    // Restore the src so it can play again if reopened
+    setTimeout(function() {
+        iframe.src = videoSrc;
+    }, 10);
+});
+
 </script>
